@@ -12,3 +12,8 @@ Username: demoUser / Password: username123
 
 ## Note
 You will probably notice that the user features and the admin features are nearly identical, this tool is meant to be accessed by trusted people only. An admin is allowed to answer help questions, and manage other accounts.
+
+# Set Up
+To set up the site, make sure to fill out /includes/psl.php with your SQL information, the name of the admin for contact, and the name of yor group.
+
+You can use the included SQL file to set up the database.
