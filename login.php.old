@@ -1,0 +1,59 @@
+<?php
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+ 
+sec_session_start();
+ 
+if (login_check($conn) == true) {
+    $logged = 'in';
+	header("Location: ./index.php");
+	exit();
+} else {
+    $logged = 'out';
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo $ENT_Name ?> Admin Panel Login </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/JavaScript" src="js/sha512.js"></script> 
+        <script type="text/JavaScript" src="js/forms.js"></script> 
+</head>
+
+<body>
+
+<div id="container">
+	<div id="tbar">
+		<div id="ttext">
+			<?php echo $ENT_Name ?> Admin Panel
+		</div>
+	</div>
+	<div id="form-area">
+		<div id="login-form">
+			<form  action="includes/login.php" method="post">
+            <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Error Logging In!</p>';
+        }
+        ?> 
+            	<fieldset id="flogin">	
+                	<legend>Login</legend>
+                	Username <br />
+            		<input type="text" name="email" placeholder="Username" /><br /><br />
+            		Password <br />
+            		<input type="password" name="password" placeholder="Password" /><br/><br />
+                    <input type="button" id="blogin" value="Login" onclick="formhash(this.form, this.form.password);" />
+                    
+                    <a href="register.php"><button type="button" id="blogin2" > Register </button></a>
+            	</fieldset>
+                       
+            
+            </form>
+        </div>
+	</div>
+</div>
+
+</body>
+</html>
