@@ -5,7 +5,7 @@ include_once 'functions.php';
 include_once 'psl-config.php';
 
 $username = $_POST['username'];
-$title = $_POST['status'];
+$title = $_POST['title'];
 $text = $_POST['text'];
 
 	if(isset($_POST['status'])){
