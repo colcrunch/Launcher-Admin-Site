@@ -4,6 +4,14 @@ include_once 'functions.php';
 
 sec_session_start();
 
+if (login_check($conn) == true) {
+    $logged = 'in';
+} else {
+    $logged = 'out';
+	header("Location: ./login.php");
+	end();
+}
+
 $p = $_POST['cp'];
 $np = $_POST['np'];
 $i = $_POST['id'];
