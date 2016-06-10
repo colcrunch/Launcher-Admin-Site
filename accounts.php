@@ -35,6 +35,8 @@ $results = array();
 
  if(@$_GET['e'] == 1){
    $e = 1;
+ } else if(@$_GET['e'] == 2){
+   $e = 2;
  }
  else{
    $e = 0;
@@ -290,6 +292,12 @@ if(isset($_GET['id'])){
         </div>
       <?php endif ?>
       <?php if($e == 1) : ?>
+        <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> Your email has been updated. Please log out and back in to see a change in the "Current Email" field.
+      </div>
+      <?php endif ?>
+      <?php if($e == 2) : ?>
       <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Oops!</strong> Looks like you tried to edit an account that doesn't exist!
