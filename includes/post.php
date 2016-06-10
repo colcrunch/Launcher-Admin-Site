@@ -4,6 +4,16 @@ include_once 'db_connect.php';
 include_once 'functions.php';
 include_once 'psl-config.php';
 
+
+sec_session_start();
+if (login_check($conn) == true) {
+    $logged = 'in';
+} else {
+    $logged = 'out';
+	header("Location: ./login.php");
+	end();
+}
+
 $username = $_POST['username'];
 $title = $_POST['title'];
 $text = $_POST['text'];
