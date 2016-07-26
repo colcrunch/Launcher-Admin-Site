@@ -10,6 +10,8 @@ Username: demoAdmin / Password: admin123
 For demo of user features:
 Username: demoUser / Password: username123
 
+For a demo of a public facing site to be used with this go to  http://launcher.colsfiles.us
+
 ## Note
 You will probably notice that the user features and the admin features are nearly identical, this tool is meant to be accessed by trusted people only. An admin is allowed to answer help questions, and manage other accounts.
 
