@@ -1,4 +1,5 @@
 <?php
+
 include_once 'db_connect.php';
 include_once 'psl-config.php';
 include_once 'functions.php';
@@ -18,8 +19,9 @@ $user = $_SESSION['username'];
 $query = $conn->prepare("SELECT * FROM `admin` WHERE `username` = ?");
 $query->bind_param("s",$user);
 $query->execute();
+$ls = $query->get_result();
 $results = array();
- while($result = $query->fetch_assoc()){
+ while($result = $ls->fetch_assoc()){
 	 $results[] = $result;
  }
  if(!empty($results)){
@@ -61,16 +63,19 @@ $results = array();
        $er = 1;
        header('Location: ../accounts.php?r=3');
      }
+	 $em->close();
 
+	 
      //Check existing Username
      $us = $conn->prepare("SELECT id FROM members WHERE username = ? LIMIT 1");
      $us->bind_param("s",$username);
-     $us->execute();
+     $us->execute(); 
      if($us->num_rows == 1){
        //Username already in use
        $er = 1;
        header('Location: ../accounts.php?r=4');
      }
+	 $us->close();
 
      if(!isset($er)){
      //Create a random salted
@@ -84,6 +89,7 @@ $results = array();
      $query->bind_param("ssss",$username,$email,$password,$random_salt);
      $query->execute();
      header('Location: ../accounts.php?r=5');
+	 $query->close();
    }
 
 
