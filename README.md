@@ -4,6 +4,7 @@ An admin panel to manage news for the SKCraft Minecraft launcher.
 #Demo
 For a demo of this, please visit http://admin.colsfiles.us
 
+
 For demo of Admin Features:
 Username: demoAdmin / Password: admin123
 
