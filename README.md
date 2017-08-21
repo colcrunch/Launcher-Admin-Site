@@ -1,7 +1,7 @@
 # Launcher-Admin-Site
 An admin panel to manage news for the SKCraft Minecraft launcher.
 
-#Demo
+# Demo
 For a demo of this, please visit http://admin.colsfiles.us
 
 For demo of Admin Features:
